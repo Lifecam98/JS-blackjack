@@ -48,5 +48,6 @@ function resetGame() {
 	sum = null;
 	cardsEl.textContent = "Cards: ";
 	sumEl.textContent = "Sum: ";
-	thirdCard = null;
+	message = "Do you want to try again? Press START GAME to start!";
+	messageEl.textContent = message;
 }
