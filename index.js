@@ -10,7 +10,6 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
 function startGame() {
-	console.log("thirdCard:", thirdCard);
 	if (thirdCard) {
 		cardsEl.textContent =
 			"Cards: " + firstCard + " " + secondCard + " " + thirdCard;
@@ -37,4 +36,11 @@ function newCard() {
 	cardsEl.textContent =
 		"Cards: " + firstCard + " " + secondCard + " " + thirdCard;
 	startGame();
+}
+
+function resetGame() {
+	sum = firstCard + secondCard;
+	cardsEl.textContent = "Cards: ";
+	sumEl.textContent = "Sum: ";
+	thirdCard = null;
 }
