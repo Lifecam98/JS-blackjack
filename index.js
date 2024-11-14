@@ -1,6 +1,7 @@
 let firstCard = null;
 let secondCard = null;
 let thirdCard = null;
+let fourthCard = null;
 let sum = null;
 let hasBlackJack = false;
 let isAlive = true;
@@ -14,13 +15,27 @@ function startGame() {
 		firstCard = Math.floor(Math.random() * 11) + 1;
 		secondCard = Math.floor(Math.random() * 11) + 1;
 	}
-	if (thirdCard) {
+	if (fourthCard) {
+		cardsEl.textContent =
+			"Cards: " +
+			firstCard +
+			" " +
+			secondCard +
+			" " +
+			thirdCard +
+			" " +
+			fourthCard;
+	} else if (thirdCard) {
 		cardsEl.textContent =
 			"Cards: " + firstCard + " " + secondCard + " " + thirdCard;
 	} else {
 		cardsEl.textContent = "Cards: " + firstCard + " " + secondCard;
 	}
-	sum = firstCard + secondCard + (thirdCard ? thirdCard : 0);
+	sum =
+		firstCard +
+		secondCard +
+		(thirdCard ? thirdCard : 0) +
+		(fourthCard ? fourthCard : 0);
 	sumEl.textContent = "Sum: " + sum;
 	if (sum <= 20) {
 		message = "Do you want to draw a new card?";
@@ -35,9 +50,11 @@ function startGame() {
 }
 
 function newCard() {
-	thirdCard = Math.floor(Math.random() * 11) + 1;
-	cardsEl.textContent =
-		"Cards: " + firstCard + " " + secondCard + " " + thirdCard;
+	if (!thirdCard) {
+		thirdCard = Math.floor(Math.random() * 11) + 1;
+	} else if (!fourthCard) {
+		fourthCard = Math.floor(Math.random() * 11) + 1;
+	}
 	startGame();
 }
 
@@ -45,6 +62,7 @@ function resetGame() {
 	firstCard = null;
 	secondCard = null;
 	thirdCard = null;
+	fourthCard = null;
 	sum = null;
 	cardsEl.textContent = "Cards: ";
 	sumEl.textContent = "Sum: ";
