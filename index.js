@@ -10,6 +10,10 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
+function startGame() {
+	renderGame();
+}
+
 function renderGame() {
 	if (!thirdCard) {
 		firstCard = Math.floor(Math.random() * 11) + 1;
