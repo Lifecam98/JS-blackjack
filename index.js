@@ -73,5 +73,3 @@ function resetGame() {
 	message = "Do you want to try again? Press START GAME to start!";
 	messageEl.textContent = message;
 }
-
-heihei;
