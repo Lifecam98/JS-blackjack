@@ -10,6 +10,8 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
+// TODO create cards array and push cards to it
+
 function startGame() {
 	renderGame();
 }
