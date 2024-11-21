@@ -28,7 +28,7 @@ function startGame() {
 
 function renderGame() {
 	for (let i = 0; i < cards.length; i++) {
-		cardsEl.textContent = "Cards:" + cards.join(" ");
+		cardsEl.textContent = "Cards: " + cards.join(" ");
 	}
 	sum =
 		firstCard +
