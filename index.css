@@ -56,6 +56,7 @@ button {
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.91);
 	padding-bottom: 3rem;
 	padding-top: 3rem;
-	width: 30%;
+	max-width: 500px;
+	width: 90%;
 	margin: 150px auto;
 }
