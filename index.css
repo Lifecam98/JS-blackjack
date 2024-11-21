@@ -5,6 +5,7 @@ body {
 	background-image: url("./Assets/poker.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+	background-position: center;
 	font-weight: bold;
 	color: rgb(255, 255, 255);
 	text-shadow: #000000 0.1em 0.1em 0.2em;
