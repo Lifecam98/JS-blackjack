@@ -33,6 +33,7 @@ button {
 	margin-bottom: 2px;
 	margin-top: 5px;
 	margin-left: 5px;
+	cursor: pointer;
 }
 
 .buttons {
@@ -40,4 +41,8 @@ button {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+}
+
+#start-game-button.disabled {
+	display: none;
 }
