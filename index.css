@@ -6,14 +6,15 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	font-weight: bold;
-	color: white;
+	color: rgb(255, 255, 255);
 	text-shadow: #000000 0.1em 0.1em 0.2em;
 	text-align: center;
+
 }
 
 h1 {
-	margin-top: 6.5em;
 	color: goldenrod;
+	font-size: 2rem;
 }
 
 #message-el {
@@ -45,4 +46,15 @@ button {
 
 #start-game-button.disabled {
 	display: none;
+}
+
+.game-container {
+	background-color: rgba(255, 255, 255, .15);
+	backdrop-filter: blur(5px);
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.91);
+	padding-bottom: 3rem;
+	padding-top: 1rem;
+	width: 30%;
+	margin: 150px auto;
 }

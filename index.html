@@ -8,15 +8,17 @@
 	</head>
 	<html>
 		<body>
-			<h1>Blackjack</h1>
-			<p id="message-el">Want to play a round?</p>
-			<p id="cards-el">Cards:</p>
-			<p id="sum-el">Sum:</p>
-			<div class="buttons">
-				<button onclick="startGame()" id="start-game-button">START GAME</button>
-				<button onclick="newCard()">NEW CARD</button>
-			</div>
-			<button onclick="resetGame()">RESTART</button>
+			<section class="game-container">
+				<h1>Blackjack</h1>
+				<p id="message-el">Want to play a round?</p>
+				<p id="cards-el">Cards:</p>
+				<p id="sum-el">Sum:</p>
+				<div class="buttons">
+					<button onclick="startGame()" id="start-game-button">START GAME</button>
+					<button onclick="newCard()">NEW CARD</button>
+				</div>
+				<button onclick="resetGame()">RESTART</button>
+			</section>
 			<script src="index.js"></script>
 		</body>
 	</html>
