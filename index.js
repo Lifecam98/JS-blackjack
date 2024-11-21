@@ -7,27 +7,27 @@ let cards = [];
 let sum = null;
 let hasBlackJack = false;
 let isAlive = true;
+let gameStarted = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 
-// TODO create cards array and push cards to it
 
 function startGame() {
+	if (!gameStarted) {
+		firstCard = Math.floor(Math.random() * 11) + 1;
+		secondCard = Math.floor(Math.random() * 11) + 1;
+		cards.push(firstCard, secondCard);
+		gameStarted = true;
+	}
 	renderGame();
 }
 
 function renderGame() {
-	if (!thirdCard) {
-		firstCard = Math.floor(Math.random() * 11) + 1;
-		secondCard = Math.floor(Math.random() * 11) + 1;
-		cards.push(firstCard, secondCard);
-	}
 	for (let i = 0; i < cards.length; i++) {
 		cardsEl.textContent = "Cards:" + cards.join(" ");
 	}
-
 	sum =
 		firstCard +
 		secondCard +
@@ -67,6 +67,7 @@ function resetGame() {
 	thirdCard = null;
 	fourthCard = null;
 	fifthCard = null;
+	gameStarted = false;
 	cards = [];
 	sum = null;
 	cardsEl.textContent = "Cards: ";
