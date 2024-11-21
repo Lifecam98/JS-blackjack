@@ -13,6 +13,7 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 let startGameButton = document.getElementById("start-game-button");
+let newCardButton = document.getElementById("new-card-button");
 
 
 function startGame() {
@@ -45,6 +46,7 @@ function renderGame() {
 	} else {
 		message = "You're out of the game!";
 		isAlive = false;
+		newCardButton.classList.add('disabled');
 	}
 	messageEl.textContent = message;
 }
@@ -73,6 +75,7 @@ function resetGame() {
 	cards = [];
 	sum = null;
 	startGameButton.classList.remove('disabled');
+	newCardButton.classList.remove('disabled');
 	cardsEl.textContent = "Cards: ";
 	sumEl.textContent = "Sum: ";
 	message = "Do you want to try again? Press START GAME to start!";
