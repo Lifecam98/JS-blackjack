@@ -48,6 +48,7 @@ function renderGame() {
 		message = "You've got Blackjack!";
 		hasBlackJack = true;
 		restartButton.classList.remove('disabled');
+		newCardButton.classList.add('disabled');
 	} else {
 		message = "You're out of the game!";
 		isAlive = false;
