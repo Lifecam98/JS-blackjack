@@ -14,7 +14,10 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 let startGameButton = document.getElementById("start-game-button");
 let newCardButton = document.getElementById("new-card-button");
+let restartButton = document.getElementById("restart-button");
 
+newCardButton.classList.add('disabled');
+restartButton.classList.add('disabled');
 
 function startGame() {
 	if (!gameStarted) {
@@ -40,12 +43,19 @@ function renderGame() {
 	sumEl.textContent = "Sum: " + sum;
 	if (sum <= 20) {
 		message = "Do you want to draw a new card?";
+		newCardButton.classList.remove('disabled');
 	} else if (sum === 21) {
 		message = "You've got Blackjack!";
 		hasBlackJack = true;
+		restartButton.classList.remove('disabled');
 	} else {
 		message = "You're out of the game!";
 		isAlive = false;
+		newCardButton.classList.add('disabled');
+		restartButton.classList.remove('disabled');
+	}
+	if (fifthCard) {
+		restartButton.classList.remove('disabled');
 		newCardButton.classList.add('disabled');
 	}
 	messageEl.textContent = message;
@@ -75,7 +85,8 @@ function resetGame() {
 	cards = [];
 	sum = null;
 	startGameButton.classList.remove('disabled');
-	newCardButton.classList.remove('disabled');
+	newCardButton.classList.add('disabled');
+	restartButton.classList.add('disabled');
 	cardsEl.textContent = "Cards: ";
 	sumEl.textContent = "Sum: ";
 	message = "Do you want to try again? Press START GAME to start!";
