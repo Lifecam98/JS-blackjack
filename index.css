@@ -15,6 +15,7 @@ body {
 h1 {
 	color: goldenrod;
 	font-size: 2rem;
+	margin-top: 0;
 }
 
 #message-el {
@@ -54,7 +55,7 @@ button {
 	border-radius: 15px;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.91);
 	padding-bottom: 3rem;
-	padding-top: 1rem;
+	padding-top: 3rem;
 	width: 30%;
 	margin: 150px auto;
 }
