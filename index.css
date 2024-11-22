@@ -46,15 +46,7 @@ button {
 	justify-content: center;
 }
 
-#start-game-button.disabled {
-	display: none;
-}
-
-#new-card-button.disabled {
-	display: none;
-}
-
-#restart-button.disabled {
+#start-game-button.disabled, #new-card-button.disabled, #restart-button.disabled {
 	display: none;
 }
 
