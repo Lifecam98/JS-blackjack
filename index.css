@@ -9,13 +9,13 @@ body {
 	color: rgb(255, 255, 255);
 	text-shadow: #000000 0.1em 0.1em 0.2em;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
 
 }
 
 h1 {
 	color: goldenrod;
-	font-size: 3rem;
+	font-size: 3.2rem;
 	margin-top: 0;
 }
 
@@ -26,7 +26,7 @@ h1 {
 button {
 	color: #000000;
 	width: 150px;
-	height: 30px;
+	height: 40px;
 	background: goldenrod;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -38,7 +38,7 @@ button {
 	margin-left: 5px;
 	cursor: pointer;
 	font-family: "Lacquer", "Sour Gummy", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial, sans-serif;
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 
 .buttons {
@@ -60,6 +60,6 @@ button {
 	padding-bottom: 3rem;
 	padding-top: 3rem;
 	max-width: 500px;
-	width: 90%;
+	width: 95%;
 	margin: 150px auto;
 }
