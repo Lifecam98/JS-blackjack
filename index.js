@@ -78,9 +78,9 @@ function newCard() {
 		fifthCard = Math.floor(Math.random() * 11) + 1;
 		cards.push(fifthCard);
 	}
-	thirdCard = thirdCard > 10 ? 10 : thirdCard;
-	fourthCard = fourthCard > 10 ? 10 : fourthCard;
-	fifthCard = fifthCard > 10 ? 10 : fifthCard;
+	thirdCard = thirdCard > 11 ? 10 : thirdCard;
+	fourthCard = fourthCard > 11 ? 10 : fourthCard;
+	fifthCard = fifthCard > 11 ? 10 : fifthCard;
 	renderGame();
 }
 
