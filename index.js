@@ -17,7 +17,7 @@ let newCardButton = document.getElementById("new-card-button");
 let restartButton = document.getElementById("restart-button");
 
 // TODO - make actual cards render instead of just card values
-
+// TODO - make ace be 1 or 11 depending on total sum
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
 
