@@ -17,7 +17,6 @@ let newCardButton = document.getElementById("new-card-button");
 let restartButton = document.getElementById("restart-button");
 
 // TODO - make actual cards render instead of just card values
-// TODO - make ace be 1 or 11 depending on total sum
 
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
@@ -25,18 +24,22 @@ restartButton.classList.add('disabled');
 
 function startGame() {
 	if (!gameStarted) {
-		firstCard = Math.floor(Math.random() * 11) + 1;
-		secondCard = Math.floor(Math.random() * 11) + 1;
+		firstCard = Math.floor(Math.random() * 12) + 2;
+		secondCard = Math.floor(Math.random() * 12) + 2;
 		cards.push(firstCard, secondCard);
 		gameStarted = true;
 		startGameButton.classList.add('disabled');
 	}
-	firstCard = firstCard > 11 ? 10: firstCard;
-	secondCard = secondCard > 11 ? 10: secondCard;
 	renderGame();
 }
 
 function renderGame() {
+	firstCard = firstCard > 11 ? 10: firstCard;
+	secondCard = secondCard > 11 ? 10: secondCard;
+	thirdCard = thirdCard > 11 ? 10 : thirdCard;
+	fourthCard = fourthCard > 11 ? 10 : fourthCard;
+	fifthCard = fifthCard > 11 ? 10 : fifthCard;
+	cards = [firstCard, secondCard, thirdCard, fourthCard, fifthCard];
 	for (let i = 0; i < cards.length; i++) {
 		cardsEl.textContent = "Cards: " + cards.join(" ");
 	}
@@ -72,18 +75,15 @@ function renderGame() {
 
 function newCard() {
 	if (!thirdCard) {
-		thirdCard = Math.floor(Math.random() * 11) + 1;
+		thirdCard = Math.floor(Math.random() * 12) + 2;
 		cards.push(thirdCard);
 	} else if (!fourthCard) {
-		fourthCard = Math.floor(Math.random() * 11) + 1;
+		fourthCard = Math.floor(Math.random() * 12) + 2;
 		cards.push(fourthCard);
 	} else if (!fifthCard) {
-		fifthCard = Math.floor(Math.random() * 11) + 1;
+		fifthCard = Math.floor(Math.random() * 12) + 2;
 		cards.push(fifthCard);
 	}
-	thirdCard = thirdCard > 11 ? 10 : thirdCard;
-	fourthCard = fourthCard > 11 ? 10 : fourthCard;
-	fifthCard = fifthCard > 11 ? 10 : fifthCard;
 	renderGame();
 }
 
