@@ -24,8 +24,8 @@ restartButton.classList.add('disabled');
 
 function startGame() {
 	if (!gameStarted) {
-		firstCard = Math.floor(Math.random() * 12) + 2;
-		secondCard = Math.floor(Math.random() * 12) + 2;
+		firstCard = Math.floor(Math.random() * 14) + 2;
+		secondCard = Math.floor(Math.random() * 14) + 2;
 		cards.push(firstCard, secondCard);
 		gameStarted = true;
 		startGameButton.classList.add('disabled');
@@ -75,13 +75,13 @@ function renderGame() {
 
 function newCard() {
 	if (!thirdCard) {
-		thirdCard = Math.floor(Math.random() * 12) + 2;
+		thirdCard = Math.floor(Math.random() * 14) + 2;
 		cards.push(thirdCard);
 	} else if (!fourthCard) {
-		fourthCard = Math.floor(Math.random() * 12) + 2;
+		fourthCard = Math.floor(Math.random() * 14) + 2;
 		cards.push(fourthCard);
 	} else if (!fifthCard) {
-		fifthCard = Math.floor(Math.random() * 12) + 2;
+		fifthCard = Math.floor(Math.random() * 14) + 2;
 		cards.push(fifthCard);
 	}
 	renderGame();
