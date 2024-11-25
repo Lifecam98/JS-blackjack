@@ -18,6 +18,7 @@ let restartButton = document.getElementById("restart-button");
 
 // TODO - make actual cards render instead of just card values
 // TODO - make ace be 1 or 11 depending on total sum
+
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
 
@@ -39,12 +40,14 @@ function renderGame() {
 	for (let i = 0; i < cards.length; i++) {
 		cardsEl.textContent = "Cards: " + cards.join(" ");
 	}
-	sum =
-		firstCard +
-		secondCard +
-		(thirdCard ? thirdCard : 0) +
-		(fourthCard ? fourthCard : 0) +
-		(fifthCard ? fifthCard : 0);
+	let tempSum = firstCard + secondCard + (thirdCard ? thirdCard : 0) + (fourthCard ? fourthCard : 0) + (fifthCard ? fifthCard : 0);
+	for (let i = 0; i < cards.length; i++) {
+    if (cards[i] === 11 && tempSum > 21) {
+		cards[i] = 1;
+		tempSum -= 10;
+    }
+}
+	sum = tempSum;
 	sumEl.textContent = "Sum: " + sum;
 	if (sum <= 20) {
 		message = "Do you want to draw a new card?";
