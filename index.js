@@ -17,7 +17,6 @@ let newCardButton = document.getElementById("new-card-button");
 let restartButton = document.getElementById("restart-button");
 
 // TODO - make actual cards render instead of just card values
-// TODO - make 3x chance for card value 10 (if value > 11 then value = 10)
 
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
@@ -31,6 +30,8 @@ function startGame() {
 		gameStarted = true;
 		startGameButton.classList.add('disabled');
 	}
+	firstCard = firstCard > 11 ? 10: firstCard;
+	secondCard = secondCard > 11 ? 10: secondCard;
 	renderGame();
 }
 
@@ -77,6 +78,9 @@ function newCard() {
 		fifthCard = Math.floor(Math.random() * 11) + 1;
 		cards.push(fifthCard);
 	}
+	thirdCard = thirdCard > 10 ? 10 : thirdCard;
+	fourthCard = fourthCard > 10 ? 10 : fourthCard;
+	fifthCard = fifthCard > 10 ? 10 : fifthCard;
 	renderGame();
 }
 
