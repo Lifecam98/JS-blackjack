@@ -4,6 +4,22 @@ let thirdCard = null;
 let fourthCard = null;
 let fifthCard = null;
 let cards = [];
+const cardImages = [
+	"./Assets/Cards/card-back.png",
+	"./Assets/Cards/2_of_spades.png",
+	"./Assets/Cards/3_of_spades.png",
+	"./Assets/Cards/4_of_spades.png",	
+	"./Assets/Cards/5_of_spades.png",
+	"./Assets/Cards/6_of_spades.png",
+	"./Assets/Cards/7_of_spades.png",
+	"./Assets/Cards/8_of_spades.png",
+	"./Assets/Cards/9_of_spades.png",
+	"./Assets/Cards/10_of_spades.png",
+	"./Assets/Cards/ace_of_spades.png",
+	"./Assets/Cards/jack_of_spades2.png",
+	"./Assets/Cards/queen_of_spades2.png",
+	"./Assets/Cards/king_of_spades2.png",
+]
 let sum = null;
 let hasBlackJack = false;
 let isAlive = true;
@@ -15,9 +31,14 @@ let cardsEl = document.getElementById("cards-el");
 let startGameButton = document.getElementById("start-game-button");
 let newCardButton = document.getElementById("new-card-button");
 let restartButton = document.getElementById("restart-button");
+let firstCardImage = document.getElementById("first-card");
+let secondCardImage = document.getElementById("second-card");
+let thirdCardImage = document.getElementById("third-card");
+let fourthCardImage = document.getElementById("fourth-card");
+let fifthCardImage = document.getElementById("fifth-card");
 
 // TODO
-// [ ] - make actual cards render instead of just card values, images in Assets/Cards
+// [x] - make actual cards render instead of just card values, images in Assets/Cards
 // [ ]
 // [ ]
 
@@ -27,12 +48,13 @@ let restartButton = document.getElementById("restart-button");
 // [ ]
 
 // BUG
-// [ ]
+// [ ] picture-cards re-rendering to 10
 // [ ]
 // [ ]
 
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
+
 
 
 function startGame() {
@@ -46,12 +68,16 @@ function startGame() {
 	renderGame();
 }
 
-// function renderCards() {
-
-// }
+function renderCards() {
+firstCardImage.src = cardImages[firstCard -1];
+secondCardImage.src = cardImages[secondCard -1];
+thirdCardImage.src = cardImages[thirdCard -1];
+fourthCardImage.src = cardImages[fourthCard -1];
+fifthCardImage.src = cardImages[fifthCard -1];
+}
 
 function renderGame() {
-	// renderCards();
+	renderCards();
 	firstCard = firstCard > 11 ? 10: firstCard;
 	secondCard = secondCard > 11 ? 10: secondCard;
 	thirdCard = thirdCard > 11 ? 10 : thirdCard;
@@ -121,4 +147,9 @@ function resetGame() {
 	sumEl.textContent = "Sum: ";
 	message = "Do you want to try again? Press START GAME to start!";
 	messageEl.textContent = message;
-}
+	firstCardImage.src = "./Assets/Cards/card-back.png";
+	secondCardImage.src = "./Assets/Cards/card-back.png";
+	thirdCardImage.src = " ";
+	fourthCardImage.src = " ";
+	fifthCardImage.src = " ";
+	}
