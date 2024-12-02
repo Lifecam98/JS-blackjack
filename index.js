@@ -39,18 +39,13 @@ let fifthCardImage = document.getElementById("fifth-card");
 
 // TODO
 // [x] - make actual cards render instead of just card values, images in Assets/Cards
-// [ ]
-// [ ]
 
 // FIXME
-// [ ]
-// [ ]
 // [ ]
 
 // BUG
 // [ ] picture-cards re-rendering to 10
-// [ ]
-// [ ]
+
 
 newCardButton.classList.add('disabled');
 restartButton.classList.add('disabled');
