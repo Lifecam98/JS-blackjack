@@ -71,11 +71,6 @@ function startGame() {
 }
 
 function renderCards() {
-// firstCardImage.src = cardImages[firstCard -1];
-// secondCardImage.src = cardImages[secondCard -1];
-// thirdCardImage.src = cardImages[thirdCard -1];
-// fourthCardImage.src = cardImages[fourthCard -1];
-// fifthCardImage.src = cardImages[fifthCard -1];
 firstCardImage.src = cardImages[firstCardReference -1];
 secondCardImage.src = cardImages[secondCardReference -1];
 thirdCardImage.src = cardImages[thirdCardReference -1];
