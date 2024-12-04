@@ -4,7 +4,12 @@ let thirdCard = null;
 let fourthCard = null;
 let fifthCard = null;
 let cards = [];
-// let cardsReferenceValue = [];
+let cardReferenceValue = [];
+let firstCardReference = null;
+let secondCardReference = null;
+let thirdCardReference = null;
+let fourthCardReference = null;
+let fifthCardReference = null;
 const cardImages = [
 	"./Assets/Cards/card-back.png",
 	"./Assets/Cards/2_of_spades.png",
@@ -42,10 +47,10 @@ let fifthCardImage = document.getElementById("fifth-card");
 // [x] - make actual cards render instead of just card values, images in Assets/Cards
 
 // FIXME
-// [ ]
+// [x] - card number representation not changing to 1 if ace is changed to 1
 
 // BUG
-// [ ] picture-cards re-rendering to 10 (new array cardReferenceValue, firstCardReference)
+// [x] picture-cards re-rendering to 10 (new array cardReferenceValue, firstCardReference)
 
 
 newCardButton.classList.add('disabled');
@@ -56,9 +61,9 @@ function startGame() {
 		firstCard = Math.floor(Math.random() * 13) + 2;
 		secondCard = Math.floor(Math.random() * 13) + 2;
 		cards.push(firstCard, secondCard);
-		// firstCardReference = firstCard;
-		// secondCardReference = firstCard;
-		// cardReferenceValue.push(firstCardReference,secondCardReference);
+		firstCardReference = firstCard;
+		secondCardReference = secondCard;
+		cardReferenceValue.push(firstCardReference,secondCardReference);
 		gameStarted = true;
 		startGameButton.classList.add('disabled');
 	}
@@ -66,16 +71,16 @@ function startGame() {
 }
 
 function renderCards() {
-firstCardImage.src = cardImages[firstCard -1];
-secondCardImage.src = cardImages[secondCard -1];
-thirdCardImage.src = cardImages[thirdCard -1];
-fourthCardImage.src = cardImages[fourthCard -1];
-fifthCardImage.src = cardImages[fifthCard -1];
-// firstCardImage.src = cardImages[firstCardReference -1];
-// secondCardImage.src = cardImages[secondCardReference -1];
-// thirdCardImage.src = cardImages[thirdCardReference -1];
-// fourthCardImage.src = cardImages[fourthCardReference -1];
-// fifthCardImage.src = cardImages[fifthCardReference -1];
+// firstCardImage.src = cardImages[firstCard -1];
+// secondCardImage.src = cardImages[secondCard -1];
+// thirdCardImage.src = cardImages[thirdCard -1];
+// fourthCardImage.src = cardImages[fourthCard -1];
+// fifthCardImage.src = cardImages[fifthCard -1];
+firstCardImage.src = cardImages[firstCardReference -1];
+secondCardImage.src = cardImages[secondCardReference -1];
+thirdCardImage.src = cardImages[thirdCardReference -1];
+fourthCardImage.src = cardImages[fourthCardReference -1];
+fifthCardImage.src = cardImages[fifthCardReference -1];
 }
 
 function renderGame() {
@@ -94,6 +99,16 @@ function renderGame() {
 		if (cards[i] === 11 && tempSum > 21) {
 			cards[i] = 1;
 			tempSum -= 10;
+		if (i === 0)
+			firstCard = 1;
+		else if (i === 1)
+			secondCard = 1;
+		else if (i === 2)
+			thirdCard = 1;
+		else if (i === 3)
+			fourthCard = 1;
+		else if (i === 4)
+			fifthCard = 1;
 		}
 	}
 	sum = tempSum;
@@ -123,18 +138,18 @@ function newCard() {
 	if (!thirdCard) {
 		thirdCard = Math.floor(Math.random() * 13) + 2;
 		cards.push(thirdCard);
-		// thirdCardReference = thirdCard;
-		// cardReferenceValue.push(thirdCardReference);
+		thirdCardReference = thirdCard;
+		cardReferenceValue.push(thirdCardReference);
 	} else if (!fourthCard) {
 		fourthCard = Math.floor(Math.random() * 13) + 2;
 		cards.push(fourthCard);
-		// fourthCardReference = fourthCard;
-		// cardReferenceValue.push(fourthCardReference);
+		fourthCardReference = fourthCard;
+		cardReferenceValue.push(fourthCardReference);
 	} else if (!fifthCard) {
 		fifthCard = Math.floor(Math.random() * 13) + 2;
 		cards.push(fifthCard);
-		// fifthCardReference = fifthCard;
-		// cardReferenceValue.push(fifthCardReference);
+		fifthCardReference = fifthCard;
+		cardReferenceValue.push(fifthCardReference);
 	}
 	renderGame();
 }
@@ -146,12 +161,12 @@ function resetGame() {
 	fourthCard = null;
 	fifthCard = null;
 	cards = [];
-	// firstCardReference = null;
-	// secondCardReference = null;
-	// thirdCardReference = null;
-	// fourthCardReference = null;
-	// fifthCardReference = null;
-	// cardsReferenceValue = [];
+	firstCardReference = null;
+	secondCardReference = null;
+	thirdCardReference = null;
+	fourthCardReference = null;
+	fifthCardReference = null;
+	cardsReferenceValue = [];
 	gameStarted = false;
 	sum = null;
 	startGameButton.classList.remove('disabled');
